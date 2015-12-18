@@ -1,0 +1,100 @@
+.resume
+    color: $dkGrey
+    .links
+        display: flex
+        justify-content: space-around
+    .skills, .experience
+        margin: -35px 0 30px
+    //.skills
+        +clearfix
+    .skills
+        display: flex
+        flex-wrap: wrap-reverse
+        flex-direction: row-reverse
+        justify-content: flex-end
+        
+    .skillBlock
+        display: inline-block
+        width: auto
+        margin: 0 60px
+        margin-bottom: 30px
+        p
+            font-size: 1.8rem
+            padding: 0
+            margin: 0 0 5px
+            
+    .skillLevel
+        span
+            position: relative
+            display: inline-block
+            +size(14px)
+            background: $primary
+            margin: 2px
+            border-radius: 50%
+            
+        @for $i from 1 through 10
+            &.level-#{$i} span:nth-child(n+#{$i+1})
+                @extend %skill-indicator     
+    
+    .job
+        margin-bottom: 20px
+    h2
+        position: relative
+        text-align: right
+        padding: 5px 20px
+        color: $ltGrey
+        +fontMuseo(700)
+        font-size: 2.4rem
+        background: 
+            image: url(../img/tab.svg)
+            repeat: no-repeat
+            position: top right
+        &:before
+            position: absolute
+            top: 0
+            content: ''
+            display: block
+            margin: 0 -20px
+            height: 10px
+            width: 100%
+            background: $primary
+    h3
+        +fontLato(900)
+        font-size: 1.8rem
+        line-height: 1.2
+        margin: 0
+        span
+            font-weight: 400
+    .date
+        color: $primary
+    h4
+        color: $mdGrey
+        +fontLato(400)
+        font-style: italic
+        font-size: 1.6rem
+        margin: 0
+    ul
+        +fontLato(400)
+        font-size: 1.4rem
+        margin-bottom: 10px
+        li
+            position: relative
+            left: 1.8rem
+            &:before
+                position: absolute
+                content: '–'
+                left: -1.4rem
+        
+%skill-indicator
+    background: $mdGrey
+    &:after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        display: block
+        +size(8px)
+        background: $ltGrey
+        margin: 3px
+        border-radius: 50%
+    

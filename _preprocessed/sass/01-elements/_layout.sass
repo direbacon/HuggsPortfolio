@@ -22,3 +22,19 @@ section
         size: cover
         position: center 0px
         attachment: fixed
+        
+.button
+    display: inline-block
+    +fontMuseo(700)
+    font-size: 18px
+    padding: 10px 20px
+    border: 3px solid $dkGrey
+    border-radius: 5px
+    background: $ltGrey
+    +rollover
+    &:hover
+        background: transparentize($white, 0.5)
+a.button
+    color: $dkGrey
+    &:visited
+        color: $dkGrey

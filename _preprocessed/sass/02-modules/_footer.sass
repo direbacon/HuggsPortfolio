@@ -1,0 +1,24 @@
+footer
+    background:
+        image: url(../img/break04-2000.jpg)
+        color: $primary
+        size: cover
+        position: center 30%
+    position: fixed
+    bottom: 0
+    height: 300px
+    width: 100%
+    z-index: -1
+    display: flex
+    .bar
+        background-color: transparentize($dkGrey, 0.2)
+        align-self: flex-end
+        flex-grow: 1
+    .container
+        display: flex
+        justify-content: space-between
+    p
+        display: inline-block
+        padding: 0 20px
+        color: $white
+        +fontMuseo(300)
