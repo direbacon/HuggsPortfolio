@@ -294,6 +294,9 @@ section {
 .break {
   height: 300px;
   background-color: #461f59;
+  background-size: cover;
+  background-position: center 0px;
+  background-attachment: fixed;
 }
 
 header {
@@ -471,6 +474,18 @@ header .headerBG .barThin {
 
 .compact .headerBG .barThin {
   height: 50px;
+}
+
+.about-brk {
+  background-image: url(../img/break01-2000.jpg);
+}
+
+.portfolio-brk {
+  background-image: url(../img/break02-2000.jpg);
+}
+
+.resume-brk {
+  background-image: url(../img/break03-2000.jpg);
 }
 
 .landing {
