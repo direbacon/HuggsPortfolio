@@ -1,0 +1,102 @@
+.about
+    overflow: hidden
+    p
+        +fontLato(400)
+        color: $primary
+        text-align: justify
+            
+    
+.options
+    display: flex
+    justify-content: space-around
+    margin: 20px 0 30px
+    a
+        +fontMuseo(500)
+        font-size: 20px
+        color: $dkGrey
+        position: relative
+        cursor: pointer
+        &:after
+            content: ''
+            display: none
+            width: 120%
+            height: 3px
+            background: $dkGrey
+            position: absolute
+            bottom: -5px
+            left: -10%
+        &:hover:after
+            display: block
+        &.active
+            color: $primary
+            pointer-events: none
+            &:after
+                display: block
+                background: $primary
+            
+            
+        
+    
+    
+.content
+    width: 200%
+    background-color: pink
+    position: relative
+    left: 0
+    transition: all .5s
+        
+    
+.myself, .others
+    padding: 0 20px
+    width: 50%
+    float: left
+@media (max-width: 600px)
+    .myself, .others
+        padding: 0 0px
+    
+.myself
+    position: relative
+    padding-bottom: 50px
+    overflow: hidden
+    .words
+        background-color: $white
+        padding: 20px 5% 70px
+    .avatar
+        position: absolute
+        right: 0px
+        bottom: 0px
+        background:
+            image: url(../img/avatar.jpg)
+            size: cover
+        border-radius: 50%
+        +size(150px)
+    
+        
+.others
+    display: none
+    li
+        background-color: $white
+        padding: 20px 5%
+        margin-bottom: 20px 
+        position: relative
+        p
+            position: relative
+            z-index: 1
+    .qmark
+        position: absolute
+        top: 25px
+        left: 4%
+        +size(25px)
+        z-index: 0
+        path
+            fill: transparentize($dkGrey, .7)
+            
+    strong
+        display: block
+        color: $dkGrey
+        font-weight: 900
+        text-align: right
+    span
+        display: block
+        color: $mdGrey
+        text-align: right

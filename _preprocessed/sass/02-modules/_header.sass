@@ -1,0 +1,108 @@
+=headerCompaction
+    transition: all .4s
+
+header
+    position: fixed
+    top: 0px
+    width: 100%
+    z-index: 10
+    overflow: hidden
+    height: 435px
+    display: flex
+    pointer-events: none
+    +headerCompaction
+    
+    .container
+        position: relative
+        z-index: 10
+        margin: 0 auto
+        display: flex
+        justify-content: space-between
+    
+    nav
+        display: inline-block
+        position: relative
+        z-index: 10
+        top: -50px
+        padding: 1.5rem 20px 0 0
+        +headerCompaction
+        font-size: 1.8rem
+        color: $white
+        height: 100%
+        pointer-events: auto
+        a
+            color: $white
+            margin: 0 .5em
+            +rollover
+            &:hover
+                color: transparentize($white, 0.4)
+
+    .brand
+        padding-left: 20px
+        h1
+            font-size: 6rem
+            color: $white
+            padding: 6rem 0
+            margin: 0
+            +headerCompaction
+        .logo
+            margin: 0 auto
+            +size(175px)
+            pointer-events: auto
+            +headerCompaction
+            path
+                fill: $white
+                +rollover
+            &:hover path
+                fill: transparentize($white, 0.4)
+    .headerBG
+        position: absolute
+        top: 0
+        z-index: 0
+        display: flex
+        width: 100%
+        height: 100%
+        opacity: .7
+        +headerCompaction
+        .barThick
+            display: inline-block
+            flex-grow: 1
+            background-color: $primary
+        .container
+            margin: 0 auto
+            flex-basis: 960px
+        .tab
+            //background:
+                image: url(../img/headerTab.svg)
+                repeat: no-repeat
+                position: top left
+            height: 135px
+            flex-basis: 245px
+            transform-origin: top left
+            transform: scale(2, 3.222222222)
+            fill: $primary
+            +headerCompaction
+        .barThin
+            height: 250px
+            flex-grow: 1
+            background-color: $primary
+            +headerCompaction
+    
+    
+.compact
+    height: 135px
+    nav
+        top: 0px
+    .brand
+        h1
+            padding: 1.5rem 0
+            font-size: 1.8rem
+        .logo
+            +size(75px)
+    .headerBG
+        opacity: 1
+        .container
+            .tab
+                transform: scale(1)
+        .barThin
+            height: 50px

@@ -1,0 +1,22 @@
+//This file compiles imported .scss and .sass files for output to a single .css
+
+//00-utilities - These are bits of code created by other developers
+@import '00-utilities/normalize'
+@import '00-utilities/clearfix'
+@import '00-utilities/bourbon/bourbon'
+@import '00-utilities/fonts'
+
+//01-elements - Reusable styles (typography, color schemes, etc)
+@import '01-elements/vars'
+@import '01-elements/typography'
+@import '01-elements/layout'
+    
+//02-modules - Reusable sections (header/footer, aticle previews, etc)
+@import '02-modules/header'
+    
+//03-pages - Unique sections or individual pages
+@import '03-pages/landing'
+@import '03-pages/about'
+@import '03-pages/portfolio'
+@import '03-pages/resume'
+@import '03-pages/contact'

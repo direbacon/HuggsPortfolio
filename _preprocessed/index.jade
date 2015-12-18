@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+    head
+        title Portfolio of Brett Huggins
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        //Load Styles
+        link(rel="shortcut icon", href="img/favicons/favicon.ico")
+        link(rel="stylesheet", href="css/main.css")
+    body
+        include ./jade/02-modules/header.jade
+        include ./jade/03-pages/landing.jade
+        include ./jade/03-pages/about.jade
+        .break.about-brk#about-brk
+        section.portfolio#portfolio
+        section.resume#resume
+        section.contact#contact
+        footer
+        
+        
+            
+
+        script(src="js/jquery-2.1.4.min.js")
+        script(src="js/functions.js")
+        //Load Fonts
+        script(src="https://use.typekit.net/iij1csg.js")
+        script try{Typekit.load({ async: true });}catch(e){}
