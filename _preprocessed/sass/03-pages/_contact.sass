@@ -1,2 +1,40 @@
 .contact
     margin-bottom: 300px
+    .container
+        margin-top: -20px
+    
+.social
+    display: flex
+    justify-content: space-around
+    
+.socialBlock
+    padding-top: 20px
+    margin-bottom: 100px
+    position: relative
+    .bubble
+        position: relative
+        display: inline-block
+        +size(80px)
+        border-radius: 50%
+        background: $dkGrey
+        z-index: 1
+        +rollover
+    p
+        position: absolute
+        text-align: center
+        display: block
+        width: 120px
+        left: 50%
+        top: 50%
+        font-size: 1.8rem
+        padding: 0
+        margin: 0 0 0 -60px
+        z-index: 0
+        +rollover
+    &:hover
+        .bubble
+            transform: scale(1.2)
+            background: $primary
+        p
+            top: 110%
+        

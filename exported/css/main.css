@@ -897,3 +897,61 @@ footer p {
 .contact {
   margin-bottom: 300px;
 }
+
+.contact .container {
+  margin-top: -20px;
+}
+
+.social {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.socialBlock {
+  padding-top: 20px;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.socialBlock .bubble {
+  position: relative;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background: #272727;
+  z-index: 1;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+}
+
+.socialBlock p {
+  position: absolute;
+  text-align: center;
+  display: block;
+  width: 120px;
+  left: 50%;
+  top: 50%;
+  font-size: 1.8rem;
+  padding: 0;
+  margin: 0 0 0 -60px;
+  z-index: 0;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+}
+
+.socialBlock:hover .bubble {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  background: #461f59;
+}
+
+.socialBlock:hover p {
+  top: 110%;
+}
