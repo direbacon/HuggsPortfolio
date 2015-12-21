@@ -21,6 +21,10 @@
         background: $dkGrey
         z-index: 1
         +rollover
+        color: $ltGrey
+        text-align: center
+        line-height: 80px
+        font-size: 50px
     p
         position: absolute
         text-align: center
@@ -39,6 +43,7 @@
             background: $primary
         p
             top: 110%
+            color: $dkGrey
             
 .cinfo
     padding: 0 80px
@@ -51,7 +56,6 @@
             
 .email, .phone
     position: relative
-    padding-bottom: 15px
     p
         color: $dkGrey
         position: absolute
@@ -60,24 +64,30 @@
         line-height: 1
         padding: 0
         margin: 0
+    a
+        position: relative
+        display: block
+        height: 50px
+        padding: 0px 20px
+        color: $ltGrey
+        +fontLato(400)
+        font-size: 1.8rem
+        background: 
+            repeat: no-repeat
+            size: auto 52px
+    i
+        margin-right: 5px
+        font-size: 2rem
+        line-height: 50px
+        
+        
 .email p
-    top: 40px
+    top: 55px
     right: 35px
 
 .phone p
     top: -23px
     left: 35px
-    
-.email a, .phone a
-    position: relative
-    display: block
-    padding: 5px 20px
-    color: $ltGrey
-    +fontLato(400)
-    font-size: 1.8rem
-    background: 
-        repeat: no-repeat
-        size: auto 50px
     
 .email a
     text-align: right

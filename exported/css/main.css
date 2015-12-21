@@ -252,7 +252,61 @@ th {
   *zoom: 1;
 }
 
-@font-face {}a {
+@font-face {}@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?q1bg8p");
+  src: url("../fonts/icomoon.eot?q1bg8p#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?q1bg8p") format("truetype"), url("../fonts/icomoon.woff?q1bg8p") format("woff"), url("../fonts/icomoon.svg?q1bg8p#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-linkedin-square:before {
+  content: "\f08c";
+}
+
+.icon-phone-square:before {
+  content: "\f098";
+}
+
+.icon-twitter:before {
+  content: "\f099";
+}
+
+.icon-linkedin:before {
+  content: "\f0e1";
+}
+
+.icon-github:before {
+  content: "\f113";
+}
+
+.icon-envelope-square:before {
+  content: "\f199";
+}
+
+.icon-file-pdf:before {
+  content: "\f1c1";
+}
+
+.icon-codepen:before {
+  content: "\f1cb";
+}
+
+a {
   text-decoration: none;
 }
 
@@ -308,10 +362,12 @@ section {
 }
 
 .button {
+  position: relative;
   display: inline-block;
   font-family: "museo",serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1;
   padding: 10px 20px;
   border: 3px solid #272727;
   border-radius: 5px;
@@ -322,6 +378,17 @@ section {
 
 .button:hover {
   background: rgba(255, 255, 255, 0.5);
+}
+
+.button i {
+  margin-right: 5px;
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.button .icon-linkedin-square {
+  position: relative;
+  top: 3px;
 }
 
 a.button {
@@ -931,6 +998,10 @@ footer p {
   z-index: 1;
   -webkit-transition: all 0.3s;
           transition: all 0.3s;
+  color: #e5e3e3;
+  text-align: center;
+  line-height: 80px;
+  font-size: 50px;
 }
 
 .socialBlock p {
@@ -957,6 +1028,7 @@ footer p {
 
 .socialBlock:hover p {
   top: 110%;
+  color: #272727;
 }
 
 .cinfo {
@@ -972,7 +1044,6 @@ footer p {
 
 .email, .phone {
   position: relative;
-  padding-bottom: 15px;
 }
 
 .email p, .phone p {
@@ -986,26 +1057,33 @@ footer p {
   margin: 0;
 }
 
+.email a, .phone a {
+  position: relative;
+  display: block;
+  height: 50px;
+  padding: 0px 20px;
+  color: #e5e3e3;
+  font-family: "lato",sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  background-repeat: no-repeat;
+  background-size: auto 52px;
+}
+
+.email i, .phone i {
+  margin-right: 5px;
+  font-size: 2rem;
+  line-height: 50px;
+}
+
 .email p {
-  top: 40px;
+  top: 55px;
   right: 35px;
 }
 
 .phone p {
   top: -23px;
   left: 35px;
-}
-
-.email a, .phone a {
-  position: relative;
-  display: block;
-  padding: 5px 20px;
-  color: #e5e3e3;
-  font-family: "lato",sans-serif;
-  font-weight: 400;
-  font-size: 1.8rem;
-  background-repeat: no-repeat;
-  background-size: auto 50px;
 }
 
 .email a {

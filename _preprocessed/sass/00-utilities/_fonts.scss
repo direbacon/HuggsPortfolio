@@ -1,3 +1,55 @@
 @font-face {
     
 }
+
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?q1bg8p');
+    src:    url('../fonts/icomoon.eot?q1bg8p#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?q1bg8p') format('truetype'),
+        url('../fonts/icomoon.woff?q1bg8p') format('woff'),
+        url('../fonts/icomoon.svg?q1bg8p#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-linkedin-square:before {
+    content: "\f08c";
+}
+.icon-phone-square:before {
+    content: "\f098";
+}
+.icon-twitter:before {
+    content: "\f099";
+}
+.icon-linkedin:before {
+    content: "\f0e1";
+}
+.icon-github:before {
+    content: "\f113";
+}
+.icon-envelope-square:before {
+    content: "\f199";
+}
+.icon-file-pdf:before {
+    content: "\f1c1";
+}
+.icon-codepen:before {
+    content: "\f1cb";
+}
+
