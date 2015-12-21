@@ -7,6 +7,8 @@
     display: flex
     justify-content: space-around
     
+
+    
 .socialBlock
     padding-top: 20px
     margin-bottom: 100px
@@ -37,4 +39,73 @@
             background: $primary
         p
             top: 110%
+            
+.cinfo
+    padding: 0 80px
+    h2
+        font-weight: 500
+        padding: 0
+        color: $primary
+        text-align: center
+
+            
+.email, .phone
+    position: relative
+    padding-bottom: 15px
+    p
+        color: $dkGrey
+        position: absolute
+        +fontLato(900)
+        font-size: 1.8rem
+        line-height: 1
+        padding: 0
+        margin: 0
+.email p
+    top: 40px
+    right: 35px
+
+.phone p
+    top: -23px
+    left: 35px
+    
+.email a, .phone a
+    position: relative
+    display: block
+    padding: 5px 20px
+    color: $ltGrey
+    +fontLato(400)
+    font-size: 1.8rem
+    background: 
+        repeat: no-repeat
+        size: auto 50px
+    
+.email a
+    text-align: right
+    background:
+        image: url(../img/tab.svg)
+        position: top right
+    &:before
+        position: absolute
+        top: 0
+        content: ''
+        display: block
+        margin: 0 -20px
+        height: 10px
+        width: 100%
+        background: $primary
         
+.phone a
+    text-align: left
+    background:
+        image: url(../img/tabPhone.svg)
+        position: top left
+    
+    &:after
+        position: absolute
+        bottom: 0
+        content: ''
+        display: block
+        margin: 0 -20px
+        height: 10px
+        width: 100%
+        background: $primary

@@ -270,6 +270,13 @@ h1 {
   line-height: 1;
 }
 
+h2 {
+  padding: 5px 20px;
+  font-family: "museo",serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -813,11 +820,7 @@ footer p {
 .resume h2 {
   position: relative;
   text-align: right;
-  padding: 5px 20px;
   color: #e5e3e3;
-  font-family: "museo",serif;
-  font-weight: 700;
-  font-size: 2.4rem;
   background-image: url(../img/tab.svg);
   background-repeat: no-repeat;
   background-position: top right;
@@ -954,4 +957,87 @@ footer p {
 
 .socialBlock:hover p {
   top: 110%;
+}
+
+.cinfo {
+  padding: 0 80px;
+}
+
+.cinfo h2 {
+  font-weight: 500;
+  padding: 0;
+  color: #461f59;
+  text-align: center;
+}
+
+.email, .phone {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.email p, .phone p {
+  color: #272727;
+  position: absolute;
+  font-family: "lato",sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+.email p {
+  top: 40px;
+  right: 35px;
+}
+
+.phone p {
+  top: -23px;
+  left: 35px;
+}
+
+.email a, .phone a {
+  position: relative;
+  display: block;
+  padding: 5px 20px;
+  color: #e5e3e3;
+  font-family: "lato",sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  background-repeat: no-repeat;
+  background-size: auto 50px;
+}
+
+.email a {
+  text-align: right;
+  background-image: url(../img/tab.svg);
+  background-position: top right;
+}
+
+.email a:before {
+  position: absolute;
+  top: 0;
+  content: '';
+  display: block;
+  margin: 0 -20px;
+  height: 10px;
+  width: 100%;
+  background: #461f59;
+}
+
+.phone a {
+  text-align: left;
+  background-image: url(../img/tabPhone.svg);
+  background-position: top left;
+}
+
+.phone a:after {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  display: block;
+  margin: 0 -20px;
+  height: 10px;
+  width: 100%;
+  background: #461f59;
 }
