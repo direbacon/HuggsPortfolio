@@ -1,8 +1,21 @@
-//Readying functions for user imputs
+//-----THINGS TO DO-----
+//--Make vars global
+//--Create global "wWidth" var
+//--Collect initial break.top and wWidth var values on page load
+//--Place break height adjustment inside of window.width function
+//--Update wWidth var when window.width function runs
+//--Break img paralax needs to be it's own function, called by window.scroll and window.width
+
+
+//Global Vars
+
+
+//Page load inits
 $(function() {
     console.log('Page is Loaded');
     smoothScroll(1000);
     aboutSwitch();
+    portCarousel();
 })
 
 
@@ -40,7 +53,7 @@ $(window).scroll(function(){
 function smoothScroll(dur) {
     $('a[href^="#"]').on('click', function(event){
         var target = $($(this).attr('href'));
-        console.log('You just clicked: ' + target);
+        //console.log('You just clicked: ' + target);
         if(target.length){
             event.preventDefault();
             $('html, body').animate({
@@ -52,7 +65,7 @@ function smoothScroll(dur) {
 
 //Controlling the styles and content of the About section
 function aboutSwitch() {
-    console.log('Transition is ready');
+    //console.log('Transition is ready');
     $('.personal').click(function(){
         console.log('Myself was clicked');
         $('.content').css('left', '0%');
@@ -68,3 +81,34 @@ function aboutSwitch() {
         $('.testimonial').addClass('active');
     });
 }
+
+
+//Portfolio Carousel
+function portCarousel() {
+    $('.carouselInner ul li:first').before($('.carouselInner ul li:last'));
+    var thumbWidth = $('.carouselInner ul li').outerWidth(true);
+    var direction
+    
+    $('.scrollR').click(function(){
+        direction = 'right';
+        $('.carouselInner ul').css('left', -(thumbWidth *2) + 'px');
+        setTimeout(leftReset,310);
+    });
+    $('.scrollL').click(function(){
+        direction = 'left';
+        $('.carouselInner ul').css('left', '0px');
+        setTimeout(leftReset,310);
+    });
+    
+    function leftReset(){
+        $('.carouselInner ul').css('transition', 'none');
+        if (direction === 'right'){
+            $('.carouselInner ul li:last').after($('.carouselInner ul li:first'));
+        }else{
+            $('.carouselInner ul li:first').before($('.carouselInner ul li:last'));
+        }
+        $('.carouselInner ul').css('left', '-' + thumbWidth + 'px');
+        setTimeout(function(){$('.carouselInner ul').css('transition', 'all .5s');},100);
+    }
+}
+

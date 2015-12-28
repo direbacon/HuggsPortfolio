@@ -306,6 +306,14 @@ th {
   content: "\f1cb";
 }
 
+.icon-angle-left:before {
+  content: "\f104";
+}
+
+.icon-angle-right:before {
+  content: "\f105";
+}
+
 a {
   text-decoration: none;
 }
@@ -341,6 +349,11 @@ body {
   position: relative;
 }
 
+section {
+  padding: 150px 0 100px;
+  background-color: #e5e3e3;
+}
+
 .container {
   width: 100%;
   max-width: 960px;
@@ -348,9 +361,12 @@ body {
   overflow: hidden;
 }
 
-section {
-  padding: 150px 0 100px;
-  background-color: #e5e3e3;
+.content {
+  width: 200%;
+  position: relative;
+  left: 0;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
 }
 
 .break {
@@ -362,7 +378,6 @@ section {
 }
 
 .button {
-  position: relative;
   display: inline-block;
   font-family: "museo",serif;
   font-weight: 700;
@@ -735,15 +750,6 @@ footer p {
   background: #461f59;
 }
 
-.content {
-  width: 200%;
-  background-color: pink;
-  position: relative;
-  left: 0;
-  -webkit-transition: all 0.5s;
-          transition: all 0.5s;
-}
-
 .myself, .others {
   padding: 0 20px;
   width: 50%;
@@ -818,6 +824,55 @@ footer p {
   display: block;
   color: #818181;
   text-align: right;
+}
+
+.thumbs, .piece {
+  width: 50%;
+  overflow: hidden;
+}
+
+.thumbs {
+  position: relative;
+  float: left;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carouselInner {
+  position: relative;
+  width: 765px;
+  overflow: hidden;
+  background: pink;
+  margin: 0 auto;
+}
+
+.carouselInner ul {
+  position: relative;
+  width: 99999px;
+  background: honeydew;
+  left: -255px;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+
+.carouselInner ul li {
+  float: left;
+  width: 245px;
+  margin: 0 5px;
+  height: 375px;
+  background: goldenrod;
+}
+
+.scrollL, .scrollR {
+  font-size: 125px;
+  color: #461f59;
 }
 
 .resume {
@@ -1067,7 +1122,7 @@ footer p {
   font-weight: 400;
   font-size: 1.8rem;
   background-repeat: no-repeat;
-  background-size: auto 52px;
+  background-size: auto 56px;
 }
 
 .email i, .phone i {
