@@ -1,32 +1,43 @@
 //-----THINGS TO DO-----
-//--Make vars global
-//--Create global "wWidth" var
 //--Collect initial break.top and wWidth var values on page load
 //--Place break height adjustment inside of window.width function
 //--Update wWidth var when window.width function runs
 //--Break img paralax needs to be it's own function, called by window.scroll and window.width
 
 
-//Global Vars
+
 
 
 //Page load inits
 $(function() {
+    //Global Vars
+    var wScrollT = $(this).scrollTop();
+    var wScrollB = $(this).scrollTop() + $(window).height();
+    var aboutT = $('.about-brk').offset().top;
+    var portT = $('.portfolio-brk').offset().top;
+    var resT = $('.resume-brk').offset().top;
+    var wWidth = $(window).width()
     console.log('Page is Loaded');
+    console.log('Top of Window: ' +wScrollT);
+    console.log('Width of Window: ' +wWidth);
+    
+    //Loading Functions
     smoothScroll(1000);
     aboutSwitch();
     portCarousel();
+    portSwitch();
+    pieceLoad();
 })
 
 
 //Functions based on scroll position of window
 $(window).scroll(function(){
     //Collect the top and bottom edge of browser window
-    var wScrollT = $(this).scrollTop();
-    var wScrollB = $(this).scrollTop() + $(window).height();
-    var aboutT = $('.about-brk').offset().top;
-    var portT = $('.portfolio-brk').offset().top;
-    var resT = $('.resume-brk').offset().top;
+    wScrollT = $(this).scrollTop();
+    wScrollB = $(this).scrollTop() + $(window).height();
+    aboutT = $('.about-brk').offset().top;
+    portT = $('.portfolio-brk').offset().top;
+    resT = $('.resume-brk').offset().top;
     //console.log('Top of Window: ' +wScrollT);
     
     //Controlling Header's morph from full to compact and back
@@ -68,14 +79,14 @@ function aboutSwitch() {
     //console.log('Transition is ready');
     $('.personal').click(function(){
         console.log('Myself was clicked');
-        $('.content').css('left', '0%');
+        $('.about .content').css('left', '0%');
         $('.others').hide(500);
         $('.testimonial').removeClass('active');
         $('.personal').addClass('active');
     });
     $('.testimonial').click(function(){
         console.log('Testimonial was clicked');
-        $('.content').css('left', '-100%');
+        $('.about .content').css('left', '-100%');
         $('.others').show();
         $('.personal').removeClass('active');
         $('.testimonial').addClass('active');
@@ -110,5 +121,32 @@ function portCarousel() {
         $('.carouselInner ul').css('left', '-' + thumbWidth + 'px');
         setTimeout(function(){$('.carouselInner ul').css('transition', 'all .5s');},100);
     }
+}
+
+//Controlling the styles and content of the Portfolio section
+function portSwitch() {
+    //console.log('Transition is ready');
+    $('.return').click(function(){
+        console.log('Returning to Portfolio');
+        $('.portfolio .content').css('left', '0%');
+        $('.piece').hide(500);
+    });
+    $('.thumb').click(function(){
+        $('.portfolio .content').css('left', '-100%');
+        $('.piece').show();
+    });
+}
+
+//Uses Ajax to populate the Piece section of the Portfolio
+function pieceLoad(){
+    $.ajaxSetup({ cache: true});
+    $('.thumb').click(function(){
+        var $this = $(this),
+            newPiece = $this.data('piece'),
+            spinner = '<div class="loader">Loading...</div>',
+            newHTML = newPiece + '.html';
+        $('.pieceLoad').html(spinner).load(newHTML);
+        console.log('Viewing: '+newHTML);
+    });
 }
 

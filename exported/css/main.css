@@ -314,6 +314,71 @@ th {
   content: "\f105";
 }
 
+.loader,
+.loader:before,
+.loader:after {
+  background: #461f59;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.loader {
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+.loader:after {
+  left: 1.5em;
+}
+
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 #461f59;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #461f59;
+    height: 5em;
+  }
+}
+
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 #461f59;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #461f59;
+    height: 5em;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -337,6 +402,16 @@ h2 {
   font-family: "museo",serif;
   font-weight: 700;
   font-size: 2.4rem;
+  margin: 0;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  font-family: "museo",serif;
+  font-weight: 400;
+  font-size: 2rem;
 }
 
 ul {
@@ -350,7 +425,7 @@ body {
 }
 
 section {
-  padding: 150px 0 100px;
+  padding: 170px 0 100px;
   background-color: #e5e3e3;
 }
 
@@ -392,7 +467,8 @@ section {
 }
 
 .button:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 0px 2px #818181 inset;
 }
 
 .button i {
@@ -713,7 +789,7 @@ footer p {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-  margin: 20px 0 30px;
+  margin-bottom: 30px;
 }
 
 .options a {
@@ -826,53 +902,94 @@ footer p {
   text-align: right;
 }
 
-.thumbs, .piece {
+.portfolio h3 {
+  color: #272727;
+  margin-bottom: 20px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  top: -8px;
+}
+
+.portfolio h3:after {
+  content: '';
+  display: none;
+  width: 120%;
+  height: 2px;
+  background: #272727;
+  position: absolute;
+  bottom: -3px;
+  left: -10%;
+}
+
+.portfolio h3:hover:after {
+  display: block;
+}
+
+.portfolio h3 .icon-angle-left {
+  font-size: 1.5em;
+  position: relative;
+  top: 4px;
+}
+
+.portfolio .carousel, .portfolio .piece {
   width: 50%;
   overflow: hidden;
 }
 
-.thumbs {
+.portfolio .carousel {
   position: relative;
   float: left;
-  border: 2px solid black;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.carouselInner {
+.portfolio .carousel .button {
+  margin: 30px auto 0;
+}
+
+.portfolio .carouselInner {
   position: relative;
   width: 765px;
   overflow: hidden;
-  background: pink;
   margin: 0 auto;
 }
 
-.carouselInner ul {
+.portfolio .carouselInner ul {
   position: relative;
   width: 99999px;
-  background: honeydew;
   left: -255px;
   -webkit-transition: all 0.3s ease;
           transition: all 0.3s ease;
 }
 
-.carouselInner ul li {
+.portfolio .carouselInner ul li {
   float: left;
   width: 245px;
   margin: 0 5px;
   height: 375px;
-  background: goldenrod;
+  cursor: pointer;
 }
 
-.scrollL, .scrollR {
-  font-size: 125px;
+.portfolio .scrollL, .portfolio .scrollR {
   color: #461f59;
+  font-size: 125px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+}
+
+.portfolio .scrollL:hover, .portfolio .scrollR:hover {
+  color: rgba(70, 31, 89, 0.85);
 }
 
 .resume {
@@ -890,7 +1007,7 @@ footer p {
 }
 
 .resume .skills, .resume .experience {
-  margin: -35px 0 30px;
+  margin: -15px 0 30px;
 }
 
 .resume .skills {
@@ -943,6 +1060,7 @@ footer p {
   position: relative;
   text-align: right;
   color: #e5e3e3;
+  margin-top: 30px;
   background-image: url(../img/tab.svg);
   background-repeat: no-repeat;
   background-position: top right;
@@ -1092,7 +1210,6 @@ footer p {
 
 .cinfo h2 {
   font-weight: 500;
-  padding: 0;
   color: #461f59;
   text-align: center;
 }

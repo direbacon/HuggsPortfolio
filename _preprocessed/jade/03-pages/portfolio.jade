@@ -1,14 +1,18 @@
 section.portfolio#portfolio
     .container
         .content
-            .thumbs
+            .carousel
                 .scrollL.icon-angle-left
                 .carouselInner
                     ul
-                        li
-                        li(style="background: red")
-                        li(style="background: blue")
-                        li(style="background: green")
-                        li(style="background: purple")
+                        li.thumb(data-piece="work01" style="background: goldenrod")
+                        li.thumb(data-piece="work02" style="background: red")
+                        li.thumb(style="background: blue")
+                        li.thumb(style="background: green")
+                        li.thumb(style="background: purple")
                 .scrollR.icon-angle-right
+                a(href='./downloads/BrettHuggins_Portfolio.pdf' target='blank').button <i class="icon-file-pdf"></i>Download Print PDF
             .piece
+                h3.return <i class="icon-angle-left"></i> Go Back
+                .pieceLoad
+                

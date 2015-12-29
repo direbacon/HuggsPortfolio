@@ -1,33 +1,61 @@
-.thumbs, .piece
-    width: 50%
-    overflow: hidden
-    
-.thumbs
-    position: relative
-    float: left
-    border: 2px solid black
-    display: flex
-    align-items: center
-    
-.carouselInner
-    position: relative
-    width: 765px
-    overflow: hidden
-    background: pink
-    margin: 0 auto
-    ul
+.portfolio
+    h3
+        color: $dkGrey
+        margin-bottom: 20px
+        display: inline-block
+        cursor: pointer
         position: relative
-        width: 99999px
-        background: honeydew
-        left: -255px
-        transition: all .3s ease
-        li
-            float: left
-            width: 245px
-            margin: 0 5px
-            height: 375px
-            background: goldenrod
+        top: -8px
+        &:after
+            content: ''
+            display: none
+            width: 120%
+            height: 2px
+            background: $dkGrey
+            position: absolute
+            bottom: -3px
+            left: -10%
+        &:hover:after
+            display: block
+        .icon-angle-left
+            font-size: 1.5em
+            position: relative
+            top: 4px        
         
-.scrollL, .scrollR
-    font-size: 125px
-    color: $primary
+    .carousel, .piece
+        width: 50%
+        overflow: hidden
+
+    .carousel
+        position: relative
+        float: left
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        .button
+            margin: 30px auto 0
+
+    .carouselInner
+        position: relative
+        width: 765px
+        overflow: hidden
+        margin: 0 auto
+        ul
+            position: relative
+            width: 99999px
+            left: -255px
+            transition: all .3s ease
+            li
+                float: left
+                width: 245px
+                margin: 0 5px
+                height: 375px
+                cursor: pointer
+
+    .scrollL, .scrollR
+        color: $primary
+        font-size: 125px
+        cursor: pointer
+        +rollover
+        &:hover
+            color: transparentize($primary, 0.15)
