@@ -59,7 +59,7 @@
                 h4
                     opacity: 0
                     position: absolute
-                    top: 0
+                    top: -20px
                     right: 0
                     bottom: 0
                     left: 0
@@ -74,6 +74,7 @@
                     +rollover
                 &:hover h4
                     opacity: 1
+                    top: 0
 
     .scrollL, .scrollR
         color: $primary
@@ -83,7 +84,3 @@
         &:hover
             color: transparentize($primary, 0.15)
     .piece
-        h1
-            color: $primary
-        p 
-            text-align: justify
