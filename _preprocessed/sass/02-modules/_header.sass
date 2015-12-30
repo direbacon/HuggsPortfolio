@@ -30,7 +30,7 @@ header
         font-size: 1.8rem
         color: $white
         height: 100%
-        pointer-events: auto
+        pointer-events: none
         a
             color: $white
             margin: 0 .5em
@@ -49,7 +49,7 @@ header
         .logo
             margin: 0 auto
             +size(175px)
-            pointer-events: auto
+            pointer-events: none
             +headerCompaction
             path
                 fill: $white
@@ -94,12 +94,14 @@ header
     height: 135px
     nav
         top: 0px
+        pointer-events: auto
     .brand
         h1
             padding: 1.5rem 0
             font-size: 1.8rem
         .logo
             +size(75px)
+            pointer-events: auto
     .headerBG
         opacity: 1
         .container

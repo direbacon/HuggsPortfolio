@@ -490,6 +490,20 @@ a.button:visited {
   color: #272727;
 }
 
+.flex-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+}
+
 header {
   position: fixed;
   top: 0px;
@@ -533,7 +547,7 @@ header nav {
   font-size: 1.8rem;
   color: #fff;
   height: 100%;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 header nav a {
@@ -564,7 +578,7 @@ header .brand .logo {
   margin: 0 auto;
   height: 175px;
   width: 175px;
-  pointer-events: auto;
+  pointer-events: none;
   -webkit-transition: all 0.4s;
           transition: all 0.4s;
 }
@@ -643,6 +657,7 @@ header .headerBG .barThin {
 
 .compact nav {
   top: 0px;
+  pointer-events: auto;
 }
 
 .compact .brand h1 {
@@ -653,6 +668,7 @@ header .headerBG .barThin {
 .compact .brand .logo {
   height: 75px;
   width: 75px;
+  pointer-events: auto;
 }
 
 .compact .headerBG {
@@ -973,11 +989,39 @@ footer p {
 }
 
 .portfolio .carouselInner ul li {
+  position: relative;
   float: left;
   width: 245px;
   margin: 0 5px;
   height: 375px;
   cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.portfolio .carouselInner ul li h4 {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 3em 0.2em 0;
+  background-color: rgba(70, 31, 89, 0.9);
+  font-family: "museo",serif;
+  font-weight: 300;
+  font-size: 3.5rem;
+  line-height: 1.4;
+  color: #e5e3e3;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+}
+
+.portfolio .carouselInner ul li:hover h4 {
+  opacity: 1;
 }
 
 .portfolio .scrollL, .portfolio .scrollR {
@@ -990,6 +1034,24 @@ footer p {
 
 .portfolio .scrollL:hover, .portfolio .scrollR:hover {
   color: rgba(70, 31, 89, 0.85);
+}
+
+.portfolio .piece h1 {
+  color: #461f59;
+}
+
+.portfolio .piece p {
+  text-align: justify;
+}
+
+.work02 .img-wrap {
+  padding: 0 10px;
+}
+
+.work02 img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .resume {

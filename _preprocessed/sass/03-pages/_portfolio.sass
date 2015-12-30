@@ -46,11 +46,34 @@
             left: -255px
             transition: all .3s ease
             li
+                position: relative
                 float: left
                 width: 245px
                 margin: 0 5px
                 height: 375px
                 cursor: pointer
+                background: 
+                    size: cover
+                    position: center
+                box-shadow: 0px 4px 6px rgba(0,0,0,.4)
+                h4
+                    opacity: 0
+                    position: absolute
+                    top: 0
+                    right: 0
+                    bottom: 0
+                    left: 0
+                    margin: 0
+                    padding: 3em .2em 0
+                    background-color: transparentize($primary, 0.1)
+                    +fontMuseo(300)
+                    font-size: 3.5rem
+                    line-height: 1.4
+                    color: $ltGrey
+                    text-align: center
+                    +rollover
+                &:hover h4
+                    opacity: 1
 
     .scrollL, .scrollR
         color: $primary
@@ -59,3 +82,8 @@
         +rollover
         &:hover
             color: transparentize($primary, 0.15)
+    .piece
+        h1
+            color: $primary
+        p 
+            text-align: justify
