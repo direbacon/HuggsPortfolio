@@ -503,6 +503,47 @@ a.button:visited {
           align-content: flex-start;
 }
 
+.mobileNav {
+  display: block;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 10;
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+          transition: transform 0.6s ease-in-out;
+}
+
+.mobileNav ul {
+  background: #461f59;
+  font-family: "museo",serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.mobileNav ul li {
+  text-align: right;
+  padding: 5px 2em;
+}
+
+.mobileNav a {
+  color: #fff;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+}
+
+.mobileNav a:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mobileNav.open {
+  -webkit-transform: translateY(-webkit-calc(0% + 50px));
+      -ms-transform: translateY(calc(0% + 50px));
+          transform: translateY(calc(0% + 50px));
+}
+
 header {
   position: fixed;
   top: 0px;
@@ -515,8 +556,8 @@ header {
   display: -ms-flexbox;
   display: flex;
   pointer-events: none;
-  -webkit-transition: all 0.4s;
-          transition: all 0.4s;
+  -webkit-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
 }
 
 header .container {
@@ -535,12 +576,13 @@ header .container {
 
 header nav {
   display: inline-block;
-  position: relative;
+  position: absolute;
   z-index: 10;
   top: -50px;
+  right: 0;
   padding: 1.5rem 20px 0 0;
-  -webkit-transition: all 0.4s;
-          transition: all 0.4s;
+  -webkit-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
   font-family: "museo",serif;
   font-weight: 500;
   font-size: 1.8rem;
@@ -560,26 +602,63 @@ header nav a:hover {
   color: rgba(255, 255, 255, 0.6);
 }
 
-header .brand {
-  padding-left: 20px;
+header .mobileNav-tog {
+  position: absolute;
+  right: 0;
+  top: -50px;
+  -webkit-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
+  width: 50px;
+  height: 50px;
+  margin-right: 30px;
+  padding: 0 5px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+header .mobileNav-tog span, header .mobileNav-tog span:before, header .mobileNav-tog span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: #fff;
+  position: relative;
+  top: 50%;
+  margin-top: -1px;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+}
+
+header .mobileNav-tog span:before {
+  top: 10px;
+}
+
+header .mobileNav-tog span:after {
+  top: -12px;
+}
+
+header .mobileNav-tog:hover span, header .mobileNav-tog:hover span:before, header .mobileNav-tog:hover span:after {
+  background: rgba(255, 255, 255, 0.6);
 }
 
 header .brand h1 {
+  display: inline-block;
+  position: relative;
+  left: 0%;
   font-size: 6rem;
   color: #fff;
-  padding: 1em 0;
-  margin: 0;
-  -webkit-transition: all 0.4s;
-          transition: all 0.4s;
+  margin: 1em 0.5em;
+  -webkit-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
 }
 
 header .brand .logo {
-  margin: 0 auto;
+  display: block;
+  margin-left: 7em;
   height: 175px;
   width: 175px;
   pointer-events: none;
-  -webkit-transition: all 0.4s;
-          transition: all 0.4s;
+  -webkit-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
 }
 
 header .brand .logo path {
@@ -590,6 +669,16 @@ header .brand .logo path {
 
 header .brand .logo:hover path {
   fill: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 780px) {
+  header .brand h1 {
+    font-size: 4rem;
+  }
+  header .brand .logo {
+    height: 125px;
+    width: 125px;
+  }
 }
 
 header .headerBG {
@@ -603,8 +692,8 @@ header .headerBG {
   width: 100%;
   height: 100%;
   opacity: .7;
-  -webkit-transition: all 0.4s;
-          transition: all 0.4s;
+  -webkit-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
 }
 
 header .headerBG .barThick {
@@ -635,8 +724,8 @@ header .headerBG .tab {
       -ms-transform: scale(2, 3.2);
           transform: scale(2, 3.2);
   fill: #461f59;
-  -webkit-transition: all 0.4s;
-          transition: all 0.4s;
+  -webkit-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
 }
 
 header .headerBG .barThin {
@@ -646,18 +735,11 @@ header .headerBG .barThin {
       -ms-flex-positive: 1;
           flex-grow: 1;
   background-color: #461f59;
-  -webkit-transition: all 0.4s;
-          transition: all 0.4s;
+  -webkit-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
 }
 
 @media screen and (max-width: 780px) {
-  header .brand h1 {
-    font-size: 4rem;
-  }
-  header .brand .logo {
-    height: 100px;
-    width: 100px;
-  }
   header .headerBG .tab {
     -webkit-transform: scale(1.5, 2.2);
         -ms-transform: scale(1.5, 2.2);
@@ -668,17 +750,26 @@ header .headerBG .barThin {
   }
 }
 
+@media screen and (max-width: 625px) {
+  header .headerBG .tab {
+    -webkit-transform: scale(5, 2);
+        -ms-transform: scale(5, 2);
+            transform: scale(5, 2);
+  }
+}
+
 .compact {
   height: 135px;
 }
 
 .compact nav {
+  display: block;
   top: 0px;
   pointer-events: auto;
 }
 
 .compact .brand h1 {
-  padding: 1.5rem 0;
+  margin: 1.5rem 1em;
   font-size: 1.8rem;
 }
 
@@ -686,6 +777,7 @@ header .headerBG .barThin {
   height: 75px;
   width: 75px;
   pointer-events: auto;
+  margin-left: 3.25em;
 }
 
 .compact .headerBG {
@@ -693,13 +785,26 @@ header .headerBG .barThin {
 }
 
 .compact .headerBG .container .tab {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  -webkit-transform: scale(1, 1.33);
+      -ms-transform: scale(1, 1.33);
+          transform: scale(1, 1.33);
+  -webkit-flex-basis: 185px;
+      -ms-flex-preferred-size: 185px;
+          flex-basis: 185px;
 }
 
 .compact .headerBG .barThin {
   height: 50px;
+}
+
+@media screen and (max-width: 625px) {
+  .compact nav {
+    display: none;
+  }
+  .compact .mobileNav-tog {
+    display: block;
+    top: 0px;
+  }
 }
 
 .about-brk {
@@ -750,14 +855,29 @@ footer .container {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 1em 2em;
 }
 
 footer p {
   display: inline-block;
-  padding: 0 20px;
+  margin: 0;
   color: #fff;
   font-family: "museo",serif;
   font-weight: 300;
+}
+
+@media screen and (max-width: 500px) {
+  footer .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  footer p:first-of-type {
+    margin-bottom: .5em;
+  }
 }
 
 .landing {
@@ -801,6 +921,13 @@ footer p {
 
 .landingNav a:hover {
   color: #818181;
+}
+
+@media screen and (max-width: 400px) {
+  .landingNav {
+    right: 1em;
+    line-height: 1.2;
+  }
 }
 
 .about {
@@ -1318,6 +1445,13 @@ footer p {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.resume .links .button {
+  margin: 0 10px 20px;
 }
 
 .resume .skills, .resume .experience {

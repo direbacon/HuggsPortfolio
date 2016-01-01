@@ -23,6 +23,7 @@ $(function() {
     
     //Loading Functions
     smoothScroll(1000);
+    mobileNav();
     aboutSwitch();
     portCarousel();
     portSwitch();
@@ -58,6 +59,21 @@ $(window).scroll(function(){
         $('.resume-brk').css({'background-position':'center ' + -(((wScrollT - resT)/8)+($(window).width()/17)) + 'px'})
     }
 })
+
+function mobileNav(){
+    $('.mobileNav-tog').on('click',function(event){
+        console.log('Mobile was clicked');
+        if($('.mobileNav').hasClass('open')){
+            $('.mobileNav').removeClass('open');
+        } else {
+            console.log("I'm not open");
+            $('.mobileNav').addClass('open');
+        }
+    });
+    $('.mobileNav li a').on('click',function(event){
+        $('.mobileNav').removeClass('open');
+    })
+}
 
 
 //Controlling the scrolling of the page when clicking on a nav item 

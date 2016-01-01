@@ -17,8 +17,17 @@ footer
     .container
         display: flex
         justify-content: space-between
+        padding: 1em 2em
     p
         display: inline-block
-        padding: 0 20px
+        margin: 0
         color: $white
         +fontMuseo(300)
+    @media screen and (max-width: 500px)
+        .container
+            flex-direction: column
+            text-align: center
+        p:first-of-type
+            margin-bottom: .5em
+            
+            

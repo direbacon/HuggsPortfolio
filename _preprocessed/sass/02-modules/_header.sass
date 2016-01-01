@@ -1,6 +1,28 @@
 =headerCompaction
-    transition: all .4s
-
+    transition: all .4s ease-in-out
+.mobileNav
+    display: block
+    position: fixed
+    width: 100%
+    top: 0px
+    z-index: 10
+    transform: translateY(-100%)
+    transition: transform .6s ease-in-out
+    ul
+        background: $primary
+        +fontMuseo(500)
+        font-size: 1.8rem
+        li
+            text-align: right
+            padding: 5px 2em
+    a
+        color: $white
+        +rollover
+        &:hover
+            color: transparentize($white, 0.4)
+    &.open
+        transform: translateY(calc(0% + 50px))
+    
 header
     position: fixed
     top: 0px
@@ -21,9 +43,10 @@ header
     
     nav
         display: inline-block
-        position: relative
+        position: absolute
         z-index: 10
         top: -50px
+        right: 0
         padding: 1.5rem 20px 0 0
         +headerCompaction
         +fontMuseo(500)
@@ -37,17 +60,48 @@ header
             +rollover
             &:hover
                 color: transparentize($white, 0.4)
+    .mobileNav-tog
+        position: absolute
+        right: 0
+        top: -50px
+        +headerCompaction
+        width: 50px
+        height: 50px
+        margin-right: 30px
+        padding: 0 5px
+        pointer-events: auto
+        cursor: pointer
+        span, span:before, span:after
+            content: ''
+            display: block
+            height: 3px
+            background: $white
+            position: relative
+            top: 50%
+            margin-top: -1px
+            +rollover
+        span:before
+            top: 10px
+        span:after
+            top: -12px
+        &:hover span, &:hover span:before, &:hover span:after
+            background: transparentize($white, 0.4)
+        
+        
+        
 
     .brand
-        padding-left: 20px
         h1
+            display: inline-block
+            position: relative
+            left: 0%
             font-size: 6rem
             color: $white
-            padding: 1em 0
-            margin: 0
+            margin: 1em .5em
             +headerCompaction
         .logo
-            margin: 0 auto
+            display: block
+            margin-left: 7em
             +size(175px)
             pointer-events: none
             +headerCompaction
@@ -56,6 +110,12 @@ header
                 +rollover
             &:hover path
                 fill: transparentize($white, 0.4)
+    @media screen and (max-width: 780px)
+        .brand 
+            h1
+                font-size: 4rem
+            .logo
+                +size(125px)
     .headerBG
         position: absolute
         top: 0
@@ -85,35 +145,43 @@ header
             background-color: $primary
             +headerCompaction
     @media screen and (max-width: 780px)
-        .brand 
-            h1
-                font-size: 4rem
-            .logo
-                +size(100px)
         .headerBG
             .tab
                 transform: scale(1.5, 2.2)
             .barThin
                 height: 175px
+    @media screen and (max-width: 625px)
+        .headerBG
+            .tab
+                transform: scale(5, 2)
         
     
     
 .compact
     height: 135px
     nav
+        display: block
         top: 0px
         pointer-events: auto
     .brand
         h1
-            padding: 1.5rem 0
+            margin: 1.5rem 1em
             font-size: 1.8rem
         .logo
             +size(75px)
             pointer-events: auto
+            margin-left: 3.25em
     .headerBG
         opacity: 1
         .container
             .tab
-                transform: scale(1)
+                transform: scale(1, 1.33)
+                flex-basis: 185px
         .barThin
             height: 50px
+    @media screen and (max-width: 625px)
+        nav
+            display: none
+        .mobileNav-tog
+            display: block
+            top: 0px
