@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 * {
   box-sizing: border-box;
@@ -568,7 +567,7 @@ header .brand {
 header .brand h1 {
   font-size: 6rem;
   color: #fff;
-  padding: 6rem 0;
+  padding: 1em 0;
   margin: 0;
   -webkit-transition: all 0.4s;
           transition: all 0.4s;
@@ -632,9 +631,9 @@ header .headerBG .tab {
   -webkit-transform-origin: top left;
       -ms-transform-origin: top left;
           transform-origin: top left;
-  -webkit-transform: scale(2, 3.22222);
-      -ms-transform: scale(2, 3.22222);
-          transform: scale(2, 3.22222);
+  -webkit-transform: scale(2, 3.2);
+      -ms-transform: scale(2, 3.2);
+          transform: scale(2, 3.2);
   fill: #461f59;
   -webkit-transition: all 0.4s;
           transition: all 0.4s;
@@ -649,6 +648,24 @@ header .headerBG .barThin {
   background-color: #461f59;
   -webkit-transition: all 0.4s;
           transition: all 0.4s;
+}
+
+@media screen and (max-width: 780px) {
+  header .brand h1 {
+    font-size: 4rem;
+  }
+  header .brand .logo {
+    height: 100px;
+    width: 100px;
+  }
+  header .headerBG .tab {
+    -webkit-transform: scale(1.5, 2.2);
+        -ms-transform: scale(1.5, 2.2);
+            transform: scale(1.5, 2.2);
+  }
+  header .headerBG .barThin {
+    height: 175px;
+  }
 }
 
 .compact {
@@ -848,7 +865,7 @@ footer p {
   float: left;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .myself, .others {
     padding: 0 0px;
   }
@@ -863,6 +880,7 @@ footer p {
 .myself .words {
   background-color: #fff;
   padding: 20px 5% 70px;
+  margin-bottom: 20px;
 }
 
 .myself .avatar {
@@ -874,6 +892,12 @@ footer p {
   border-radius: 50%;
   height: 150px;
   width: 150px;
+}
+
+@media screen and (max-width: 600px) {
+  .myself .avatar {
+    right: 10px;
+  }
 }
 
 .others {
@@ -1007,8 +1031,8 @@ footer p {
   right: 0;
   bottom: 0;
   left: 0;
-  margin: 0;
-  padding: 3em 0.2em 0;
+  margin: auto;
+  padding: 50px 0.2em 0;
   background-color: rgba(70, 31, 89, 0.9);
   font-family: "museo",serif;
   font-weight: 300;
@@ -1053,9 +1077,19 @@ footer p {
 
 .work-header h1 {
   color: #461f59;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   line-height: 1.5;
-  margin-right: 30px;
+  margin-right: 25px;
+}
+
+.work-header h1 span {
+  margin-right: 5px;
 }
 
 .work-content {
@@ -1068,6 +1102,7 @@ footer p {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   width: 100%;
+  text-align: justify;
 }
 
 .work-content p {
@@ -1081,11 +1116,25 @@ footer p {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
+.work-content .img-bar, .work-content .img-beam {
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.work-content .img-bar img, .work-content .img-beam img {
+  box-shadow: none;
+  position: absolute;
+}
+
 .work-content .img-bar {
   position: relative;
   height: 200px;
-  overflow: hidden;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.work-content .img-beam {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .work-content .col-1-3, .work-content .col-2-3, .work-content .col-1-2, .work-content .col-full {
@@ -1141,21 +1190,124 @@ footer p {
           order: 1;
 }
 
-@media (max-width: 600px) {
+.work-content .col-contain {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  with: 100%;
+}
+
+@media screen and (max-width: 600px) {
   .work-content {
-    padding: 0 10px;
     display: block;
+    padding: 0 10px;
   }
-  .work-content .col-1-3, .work-content .col-2-3, .work-content .col-1-2 {
+  .work-content .col-1-3, .work-content .col-2-3, .work-content .col-1-2, .work-content .col-full {
+    margin: 0 0px 20px;
     width: 100%;
   }
   .work-content .col-push-1-3, .work-content .col-push-2-3, .work-content .col-push-1-2 {
     margin-left: 10px;
   }
+  .work-content .col-contain {
+    display: block;
+  }
+}
+
+.work02 .rep-lefttop:after, .work02 .rep-rightbottom {
+  display: inline-block;
+  width: auto;
+}
+
+.work02 .rep-lefttop:after {
+  content: 'left';
+}
+
+@media screen and (max-width: 600px) {
+  .work02 .rep-lefttop:after {
+    content: 'top';
+  }
+}
+
+.work02 .rep-rightbottom:after {
+  content: 'right';
+}
+
+@media screen and (max-width: 600px) {
+  .work02 .rep-rightbottom:after {
+    content: 'bottom';
+  }
+}
+
+.work03 .logo-box {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.work03 .logo-box .logo {
+  display: inline-block;
+  width: 25%;
+  max-width: 120px;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.work03 .logo-box .logo:after {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.work03 .logo-box .logo.purp {
+  background-image: url("../img/bhLogo_AlphaPurple.png");
+}
+
+.work03 .logo-box .logo.whiteP, .work03 .logo-box .logo.whiteG {
+  background-image: url("../img/bhLogo_AlphaWhite.png");
+}
+
+.work03 .logo-box .logo.whiteP {
+  background-color: #461f59;
+}
+
+.work03 .logo-box .logo.whiteG {
+  background-color: #272727;
+}
+
+.work03 .logo-box .logo.black {
+  background-image: url("../img/bhLogo_AlphaBlack.png");
+}
+
+.work03 .pre-logo {
+  box-shadow: none;
+  max-height: 100px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .work03 .pre-logo {
+    display: inline-block;
+    width: 50%;
+  }
 }
 
 .resume {
   color: #272727;
+}
+
+.resume .container {
+  padding: 0 10px;
 }
 
 .resume .links {
@@ -1194,8 +1346,7 @@ footer p {
 .resume .skillBlock {
   display: inline-block;
   width: auto;
-  margin: 0 60px;
-  margin-bottom: 30px;
+  margin: 0 5.25% 30px;
 }
 
 .resume .skillBlock p {
@@ -1272,14 +1423,32 @@ footer p {
 }
 
 .resume ul li {
-  position: relative;
-  left: 1.8rem;
+  text-indent: -1em;
+  margin-left: 1em;
 }
 
-.resume ul li:before {
-  position: absolute;
-  content: '–';
-  left: -1.4rem;
+@media screen and (max-width: 780px) {
+  .resume .skillBlock {
+    margin: 0 3.5% 30px;
+  }
+  .resume .skills, .resume .experience {
+    margin: 0 0 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .resume .skillBlock {
+    margin: 0 8% 30px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .resume .skills, .resume .experience {
+    margin: 10px 0 30px;
+  }
+  .resume .skillBlock {
+    margin: 0 5% 30px;
+  }
 }
 
 .resume .skillLevel.level-1 span:nth-child(n+2), .resume .skillLevel.level-2 span:nth-child(n+3), .resume .skillLevel.level-3 span:nth-child(n+4), .resume .skillLevel.level-4 span:nth-child(n+5), .resume .skillLevel.level-5 span:nth-child(n+6), .resume .skillLevel.level-6 span:nth-child(n+7), .resume .skillLevel.level-7 span:nth-child(n+8), .resume .skillLevel.level-8 span:nth-child(n+9), .resume .skillLevel.level-9 span:nth-child(n+10), .resume .skillLevel.level-10 span:nth-child(n+11) {

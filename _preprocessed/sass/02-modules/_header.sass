@@ -43,7 +43,7 @@ header
         h1
             font-size: 6rem
             color: $white
-            padding: 6rem 0
+            padding: 1em 0
             margin: 0
             +headerCompaction
         .logo
@@ -73,14 +73,10 @@ header
             margin: 0 auto
             flex-basis: 960px
         .tab
-            //background:
-                image: url(../img/headerTab.svg)
-                repeat: no-repeat
-                position: top left
             height: 135px
             flex-basis: 245px
             transform-origin: top left
-            transform: scale(2, 3.222222222)
+            transform: scale(2, 3.2)
             fill: $primary
             +headerCompaction
         .barThin
@@ -88,6 +84,18 @@ header
             flex-grow: 1
             background-color: $primary
             +headerCompaction
+    @media screen and (max-width: 780px)
+        .brand 
+            h1
+                font-size: 4rem
+            .logo
+                +size(100px)
+        .headerBG
+            .tab
+                transform: scale(1.5, 2.2)
+            .barThin
+                height: 175px
+        
     
     
 .compact
