@@ -5,13 +5,14 @@
     
 .social
     display: flex
+    flex-wrap: wrap
     justify-content: space-around
+    margin-bottom: 100px
     
 
     
 .socialBlock
     padding-top: 20px
-    margin-bottom: 100px
     position: relative
     .bubble
         position: relative
@@ -25,6 +26,7 @@
         text-align: center
         line-height: 80px
         font-size: 50px
+        margin: 0
     p
         position: absolute
         text-align: center
@@ -44,6 +46,8 @@
         p
             top: 110%
             color: $dkGrey
+    @media screen and (max-width: 400px)
+        margin: 0 30px 50px
             
 .cinfo
     padding: 0 80px
@@ -51,6 +55,14 @@
         font-weight: 500
         color: $primary
         text-align: center
+    @media screen and (max-width: 700px)
+        padding: 0 30px
+    @media screen and (max-width: 600px)
+        padding: 0 20px
+    @media screen and (max-width: 550px)
+        text-align: center
+    @media screen and (max-width: 400px)
+        margin-top: -50px
 
             
 .email, .phone
@@ -78,15 +90,26 @@
         margin-right: 5px
         font-size: 2rem
         line-height: 50px
+    @media screen and (max-width: 550px)
+        p
+            position: relative
+            margin: 10px auto
+            
         
         
 .email p
     top: 55px
     right: 35px
+    @media screen and (max-width: 550px)
+        top: auto
+        right: auto
 
 .phone p
     top: -23px
     left: 35px
+    @media screen and (max-width: 550px)
+        top: auto
+        left: auto
     
 .email a
     text-align: right
@@ -108,7 +131,6 @@
     background:
         image: url(../img/tabPhone.svg)
         position: top left
-    
     &:after
         position: absolute
         bottom: 0
@@ -118,3 +140,10 @@
         height: 10px
         width: 100%
         background: $primary
+@media screen and (max-width: 550px)
+    .email a, .phone a
+        background: 
+            color: $primary
+            image: none
+        text-align: center
+        margin-bottom: 20px

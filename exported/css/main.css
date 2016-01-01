@@ -1145,8 +1145,8 @@ footer p {
   position: relative;
   width: 99999px;
   left: -255px;
-  -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
 }
 
 .portfolio .carouselInner ul li {
@@ -1520,6 +1520,15 @@ footer p {
           justify-content: flex-end;
 }
 
+@media screen and (max-width: 470px) {
+  .resume .skills {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .resume .skillBlock {
   display: inline-block;
   width: auto;
@@ -1658,14 +1667,17 @@ footer p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
+  margin-bottom: 100px;
 }
 
 .socialBlock {
   padding-top: 20px;
-  margin-bottom: 100px;
   position: relative;
 }
 
@@ -1683,6 +1695,7 @@ footer p {
   text-align: center;
   line-height: 80px;
   font-size: 50px;
+  margin: 0;
 }
 
 .socialBlock p {
@@ -1712,6 +1725,12 @@ footer p {
   color: #272727;
 }
 
+@media screen and (max-width: 400px) {
+  .socialBlock {
+    margin: 0 30px 50px;
+  }
+}
+
 .cinfo {
   padding: 0 80px;
 }
@@ -1720,6 +1739,30 @@ footer p {
   font-weight: 500;
   color: #461f59;
   text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .cinfo {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cinfo {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .cinfo {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cinfo {
+    margin-top: -50px;
+  }
 }
 
 .email, .phone {
@@ -1756,14 +1799,35 @@ footer p {
   line-height: 50px;
 }
 
+@media screen and (max-width: 550px) {
+  .email p, .phone p {
+    position: relative;
+    margin: 10px auto;
+  }
+}
+
 .email p {
   top: 55px;
   right: 35px;
 }
 
+@media screen and (max-width: 550px) {
+  .email p {
+    top: auto;
+    right: auto;
+  }
+}
+
 .phone p {
   top: -23px;
   left: 35px;
+}
+
+@media screen and (max-width: 550px) {
+  .phone p {
+    top: auto;
+    left: auto;
+  }
 }
 
 .email a {
@@ -1798,4 +1862,13 @@ footer p {
   height: 10px;
   width: 100%;
   background: #461f59;
+}
+
+@media screen and (max-width: 550px) {
+  .email a, .phone a {
+    background-color: #461f59;
+    background-image: none;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
