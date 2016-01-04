@@ -25,7 +25,6 @@ $(function() {
     smoothScroll(1000);
     mobileNav();
     aboutSwitch();
-    portCarousel();
     portSwitch();
     pieceLoad();
 })
@@ -110,34 +109,7 @@ function aboutSwitch() {
 }
 
 
-//Portfolio Carousel
-function portCarousel() {
-    $('.carouselInner ul li:first').before($('.carouselInner ul li:last'));
-    var thumbWidth = $('.carouselInner ul li').outerWidth(true);
-    var direction
-    
-    $('.scrollR').click(function(){
-        direction = 'right';
-        $('.carouselInner ul').css('left', -(thumbWidth *2) + 'px');
-        setTimeout(leftReset,310);
-    });
-    $('.scrollL').click(function(){
-        direction = 'left';
-        $('.carouselInner ul').css('left', '0px');
-        setTimeout(leftReset,310);
-    });
-    
-    function leftReset(){
-        $('.carouselInner ul').css('transition', 'none');
-        if (direction === 'right'){
-            $('.carouselInner ul li:last').after($('.carouselInner ul li:first'));
-        }else{
-            $('.carouselInner ul li:first').before($('.carouselInner ul li:last'));
-        }
-        $('.carouselInner ul').css('left', '-' + thumbWidth + 'px');
-        setTimeout(function(){$('.carouselInner ul').css('transition', 'all .5s');},100);
-    }
-}
+
 
 //Controlling the styles and content of the Portfolio section
 function portSwitch() {
@@ -159,7 +131,7 @@ function pieceLoad(){
     $('.thumb').click(function(){
         var $this = $(this),
             newPiece = $this.data('piece'),
-            spinner = '<div class="loader">Loading...</div>',
+            spinner = '<div class="loader"></div>',
             newHTML = newPiece + '.html';
         $('.pieceLoad').html(spinner).load(newHTML);
         console.log('Viewing: '+newHTML);

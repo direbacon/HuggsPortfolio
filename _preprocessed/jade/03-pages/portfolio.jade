@@ -1,21 +1,21 @@
 section.portfolio#portfolio
     .container
         .content
-            .carousel
-                .scrollL.icon-angle-left
-                .carouselInner
-                    ul
-                        li.thumb(data-piece="work01" style="background-image: url('./img/darkroastThumb.jpg')")
-                            h4 The Darkest Roast
-                        li.thumb(data-piece="work02" style="background-image: url('./img/ignitorThumb.jpg')")
-                            h4 Ignitor Labs Redesign Proposal
-                        li.thumb(data-piece="work03" style="background-image: url('./img/personalThumb.jpg')")
-                            h4 Personal Website Creation
-                        li.thumb(data-piece="work04" style="background: green")
-                        li.thumb(data-piece="work05" style="background: purple")
-                .scrollR.icon-angle-right
-                .carouselLink
-                    a(href='./downloads/BrettHuggins_Portfolio.pdf' target='blank').button <i class="icon-file-pdf"></i>Download Print PDF
+            .thumbnails
+                .thumbnail-grid
+                    .thumb(data-piece="work01" style="background-image: url('./img/darkroastThumb.jpg')")
+                        h4 The Darkest Roast
+                    .thumb(data-piece="work02" style="background-image: url('./img/ignitorThumb.jpg')")
+                        h4 Ignitor Labs Redesign Proposal
+                    .thumb(data-piece="work03" style="background-image: url('./img/personalThumb.jpg')")
+                        h4 Personal Website Creation
+                    .thumb(data-piece="work04" style="background: green")
+                        h4 Filler Piece 01
+                    .thumb(data-piece="work05" style="background: purple")
+                        h4 Filler Piece 02
+                    .thumb(data-piece="work05" style="background: goldenrod")
+                        h4 Filler Piece 03
+                a(href='./downloads/BrettHuggins_Portfolio.pdf' target='blank').button <i class="icon-file-pdf"></i>Download Print PDF
             .piece
                 h3.return <i class="icon-angle-left"></i> Go Back
                 .pieceLoad
