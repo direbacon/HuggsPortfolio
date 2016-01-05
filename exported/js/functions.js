@@ -49,13 +49,13 @@ $(window).scroll(function(){
     
     //Contorlling parallax effects of break images
     if(wScrollB > (aboutT-10)){
-        $('.about-brk').css({'background-position':'center ' + -(((wScrollT - aboutT)/8)+($(window).width()/17)) + 'px'})
+        $('.about-brk').css({'background-position':'center ' + -(((wScrollT - aboutT)/5)) + 'px'})
     }
     if(wScrollB > (portT-10)){
-        $('.portfolio-brk').css({'background-position':'center ' + -(((wScrollT - portT)/8)+($(window).width()/17)) + 'px'})
+        $('.portfolio-brk').css({'background-position':'center ' + -(((wScrollT - portT)/8)) + 'px'})
     }
     if(wScrollB > (resT-10)){
-        $('.resume-brk').css({'background-position':'center ' + -(((wScrollT - resT)/8)+($(window).width()/17)) + 'px'})
+        $('.resume-brk').css({'background-position':'center ' + -(((wScrollT - resT)/8)) + 'px'})
     }
 })
 
