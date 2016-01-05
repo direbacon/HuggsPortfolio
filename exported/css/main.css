@@ -1055,7 +1055,31 @@ footer p {
 .myself .words {
   background-color: #fff;
   padding: 20px 5% 70px;
-  margin-bottom: 20px;
+}
+
+.myself .words .findme {
+  width: 100%;
+  margin: 10px 0 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.myself .words .findme a {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: #e5e3e3;
+}
+
+.myself .words .findme a:hover {
+  color: #272727;
 }
 
 .myself .avatar {
