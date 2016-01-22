@@ -467,12 +467,6 @@ section {
   background-attachment: fixed;
 }
 
-@media screen and (max-width: 400px) {
-  .break {
-    background-attachment: scroll;
-  }
-}
-
 .button {
   display: inline-block;
   font-family: "museo",serif;
@@ -893,6 +887,12 @@ header .headerBG .barThin {
   }
   .resume-brk {
     background-image: url(../img/break03-0900.jpg);
+  }
+}
+
+@supports (background: -webkit-canvas(square)) {
+  .about-brk, .portfolio-brk, .resume-brk {
+    background-image: none;
   }
 }
 
