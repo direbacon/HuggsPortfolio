@@ -289,12 +289,32 @@ th {
   content: "\f0e1";
 }
 
+.icon-angle-left:before {
+  content: "\f104";
+}
+
+.icon-angle-right:before {
+  content: "\f105";
+}
+
 .icon-github:before {
   content: "\f113";
 }
 
+.icon-dribbble:before {
+  content: "\f17d";
+}
+
 .icon-envelope-square:before {
   content: "\f199";
+}
+
+.icon-behance:before {
+  content: "\f1b4";
+}
+
+.icon-behance-square:before {
+  content: "\f1b5";
 }
 
 .icon-file-pdf:before {
@@ -303,14 +323,6 @@ th {
 
 .icon-codepen:before {
   content: "\f1cb";
-}
-
-.icon-angle-left:before {
-  content: "\f104";
-}
-
-.icon-angle-right:before {
-  content: "\f105";
 }
 
 .loader,
@@ -428,6 +440,10 @@ section {
   background-color: #e5e3e3;
 }
 
+.hide {
+  display: none;
+}
+
 .container {
   width: 100%;
   max-width: 960px;
@@ -449,6 +465,12 @@ section {
   background-size: cover;
   background-position: center 0px;
   background-attachment: fixed;
+}
+
+@media screen and (max-width: 400px) {
+  .break {
+    background-attachment: scroll;
+  }
 }
 
 .button {
@@ -652,6 +674,7 @@ header .brand h1 {
 }
 
 header .brand .logo {
+  position: relative;
   display: block;
   margin-left: 7em;
   height: 175px;
@@ -661,13 +684,21 @@ header .brand .logo {
           transition: all 0.4s ease-in-out;
 }
 
-header .brand .logo path {
+header .brand .logo svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+header .brand .logo svg path {
   fill: #fff;
   -webkit-transition: all 0.3s;
           transition: all 0.3s;
 }
 
-header .brand .logo:hover path {
+header .brand .logo:hover svg path {
   fill: rgba(255, 255, 255, 0.6);
 }
 
@@ -713,19 +744,40 @@ header .headerBG .container {
 }
 
 header .headerBG .tab {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
   height: 135px;
-  -webkit-flex-basis: 245px;
-      -ms-flex-preferred-size: 245px;
-          flex-basis: 245px;
+  -webkit-flex-basis: 370px;
+      -ms-flex-preferred-size: 370px;
+          flex-basis: 370px;
+  -webkit-transform: scale(3.2, 3.2);
+      -ms-transform: scale(3.2, 3.2);
+          transform: scale(3.2, 3.2);
   -webkit-transform-origin: top left;
       -ms-transform-origin: top left;
           transform-origin: top left;
-  -webkit-transform: scale(2, 3.2);
-      -ms-transform: scale(2, 3.2);
-          transform: scale(2, 3.2);
   fill: #461f59;
   -webkit-transition: all 0.4s ease-in-out;
           transition: all 0.4s ease-in-out;
+}
+
+header .headerBG .tab svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 0px;
+  left: 0px;
+}
+
+header .headerBG .tab svg polygon {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 header .headerBG .barThin {
@@ -741,9 +793,9 @@ header .headerBG .barThin {
 
 @media screen and (max-width: 780px) {
   header .headerBG .tab {
-    -webkit-transform: scale(1.5, 2.2);
-        -ms-transform: scale(1.5, 2.2);
-            transform: scale(1.5, 2.2);
+    -webkit-transform: scale(2.5, 2.2);
+        -ms-transform: scale(2.5, 2.2);
+            transform: scale(2.5, 2.2);
   }
   header .headerBG .barThin {
     height: 175px;
@@ -752,9 +804,9 @@ header .headerBG .barThin {
 
 @media screen and (max-width: 625px) {
   header .headerBG .tab {
-    -webkit-transform: scale(5, 2);
-        -ms-transform: scale(5, 2);
-            transform: scale(5, 2);
+    -webkit-transform: scale(7, 2);
+        -ms-transform: scale(7, 2);
+            transform: scale(7, 2);
   }
 }
 
@@ -785,9 +837,10 @@ header .headerBG .barThin {
 }
 
 .compact .headerBG .container .tab {
-  -webkit-transform: scale(1, 1.33);
-      -ms-transform: scale(1, 1.33);
-          transform: scale(1, 1.33);
+  left: -1px;
+  -webkit-transform: scale(1.02, 1);
+      -ms-transform: scale(1.02, 1);
+          transform: scale(1.02, 1);
   -webkit-flex-basis: 185px;
       -ms-flex-preferred-size: 185px;
           flex-basis: 185px;
@@ -1184,6 +1237,7 @@ footer p {
 
 .portfolio .thumbnails .button {
   margin: 30px auto 0;
+  display: none;
 }
 
 @media screen and (max-width: 900px) {
@@ -1288,7 +1342,7 @@ footer p {
     bottom: 0;
   }
   .portfolio .thumbnail-grid .thumb:after {
-    padding-top: 80%;
+    padding-top: 100%;
   }
 }
 
@@ -1646,6 +1700,12 @@ footer p {
   background-position: top right;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .resume h2 {
+    background-image: url(../img/tab.png);
+  }
+}
+
 .resume h2:before {
   position: absolute;
   top: 0;
@@ -1794,6 +1854,21 @@ footer p {
           transition: all 0.3s;
 }
 
+.socialBlock p .accent {
+  position: relative;
+}
+
+.socialBlock p .accent:before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: .15em;
+  top: .5em;
+  background: #272727;
+  height: 1px;
+  width: .28em;
+}
+
 .socialBlock:hover .bubble {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
@@ -1917,6 +1992,12 @@ footer p {
   background-position: top right;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .email a {
+    background-image: url(../img/tab.png);
+  }
+}
+
 .email a:before {
   position: absolute;
   top: 0;
@@ -1932,6 +2013,12 @@ footer p {
   text-align: left;
   background-image: url(../img/tabPhone.svg);
   background-position: top left;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .phone a {
+    background-image: url(../img/tabPhone.png);
+  }
 }
 
 .phone a:after {

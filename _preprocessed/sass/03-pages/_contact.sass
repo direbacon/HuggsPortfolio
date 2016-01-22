@@ -39,6 +39,17 @@
         margin: 0 0 0 -60px
         z-index: 0
         +rollover
+        .accent
+            position: relative
+            &:before
+                content: ''
+                position: absolute
+                display: block
+                left: .15em
+                top: .5em
+                background: $dkGrey
+                height: 1px
+                width: .28em
     &:hover
         .bubble
             transform: scale(1.2)
@@ -116,6 +127,8 @@
     background:
         image: url(../img/tab.svg)
         position: top right
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+        background-image: url(../img/tab.png)
     &:before
         position: absolute
         top: 0
@@ -131,6 +144,8 @@
     background:
         image: url(../img/tabPhone.svg)
         position: top left
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+        background-image: url(../img/tabPhone.png)
     &:after
         position: absolute
         bottom: 0

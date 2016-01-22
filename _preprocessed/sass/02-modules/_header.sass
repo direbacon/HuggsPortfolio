@@ -100,15 +100,22 @@ header
             margin: 1em .5em
             +headerCompaction
         .logo
+            position: relative
             display: block
             margin-left: 7em
             +size(175px)
             pointer-events: none
             +headerCompaction
-            path
-                fill: $white
-                +rollover
-            &:hover path
+            svg
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                left: 0
+                path
+                    fill: $white
+                    +rollover
+            &:hover svg path
                 fill: transparentize($white, 0.4)
     @media screen and (max-width: 780px)
         .brand 
@@ -133,12 +140,29 @@ header
             margin: 0 auto
             flex-basis: 960px
         .tab
+            position: relative
+            top: 0
+            left: 0
+            margin: 0
             height: 135px
-            flex-basis: 245px
+            flex-basis: 370px
+            transform: scale(3.2, 3.2)
             transform-origin: top left
-            transform: scale(2, 3.2)
             fill: $primary
             +headerCompaction
+            svg
+                width: 100%
+                height: 100%
+                position: absolute
+                padding: 0
+                margin: 0
+                top: 0px
+                left: 0px
+                polygon
+                    width: 100%
+                    height: 100%
+                    margin: 0
+                    padding: 0
         .barThin
             height: 250px
             flex-grow: 1
@@ -147,13 +171,13 @@ header
     @media screen and (max-width: 780px)
         .headerBG
             .tab
-                transform: scale(1.5, 2.2)
+                transform: scale(2.5, 2.2)
             .barThin
                 height: 175px
     @media screen and (max-width: 625px)
         .headerBG
             .tab
-                transform: scale(5, 2)
+                transform: scale(7, 2)
         
     
     
@@ -175,7 +199,8 @@ header
         opacity: 1
         .container
             .tab
-                transform: scale(1, 1.33)
+                left: -1px
+                transform: scale(1.02, 1)
                 flex-basis: 185px
         .barThin
             height: 50px
