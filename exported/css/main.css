@@ -289,12 +289,32 @@ th {
   content: "\f0e1";
 }
 
+.icon-angle-left:before {
+  content: "\f104";
+}
+
+.icon-angle-right:before {
+  content: "\f105";
+}
+
 .icon-github:before {
   content: "\f113";
 }
 
+.icon-dribbble:before {
+  content: "\f17d";
+}
+
 .icon-envelope-square:before {
   content: "\f199";
+}
+
+.icon-behance:before {
+  content: "\f1b4";
+}
+
+.icon-behance-square:before {
+  content: "\f1b5";
 }
 
 .icon-file-pdf:before {
@@ -303,14 +323,6 @@ th {
 
 .icon-codepen:before {
   content: "\f1cb";
-}
-
-.icon-angle-left:before {
-  content: "\f104";
-}
-
-.icon-angle-right:before {
-  content: "\f105";
 }
 
 .loader,
@@ -428,6 +440,10 @@ section {
   background-color: #e5e3e3;
 }
 
+.hide {
+  display: none;
+}
+
 .container {
   width: 100%;
   max-width: 960px;
@@ -449,6 +465,12 @@ section {
   background-size: cover;
   background-position: center 0px;
   background-attachment: fixed;
+}
+
+@media screen and (max-width: 400px) {
+  .break {
+    background-attachment: scroll;
+  }
 }
 
 .button {
@@ -652,6 +674,7 @@ header .brand h1 {
 }
 
 header .brand .logo {
+  position: relative;
   display: block;
   margin-left: 7em;
   height: 175px;
@@ -661,13 +684,21 @@ header .brand .logo {
           transition: all 0.4s ease-in-out;
 }
 
-header .brand .logo path {
+header .brand .logo svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+header .brand .logo svg path {
   fill: #fff;
   -webkit-transition: all 0.3s;
           transition: all 0.3s;
 }
 
-header .brand .logo:hover path {
+header .brand .logo:hover svg path {
   fill: rgba(255, 255, 255, 0.6);
 }
 
@@ -713,19 +744,40 @@ header .headerBG .container {
 }
 
 header .headerBG .tab {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
   height: 135px;
-  -webkit-flex-basis: 245px;
-      -ms-flex-preferred-size: 245px;
-          flex-basis: 245px;
+  -webkit-flex-basis: 370px;
+      -ms-flex-preferred-size: 370px;
+          flex-basis: 370px;
+  -webkit-transform: scale(3.2, 3.2);
+      -ms-transform: scale(3.2, 3.2);
+          transform: scale(3.2, 3.2);
   -webkit-transform-origin: top left;
       -ms-transform-origin: top left;
           transform-origin: top left;
-  -webkit-transform: scale(2, 3.2);
-      -ms-transform: scale(2, 3.2);
-          transform: scale(2, 3.2);
   fill: #461f59;
   -webkit-transition: all 0.4s ease-in-out;
           transition: all 0.4s ease-in-out;
+}
+
+header .headerBG .tab svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 0px;
+  left: 0px;
+}
+
+header .headerBG .tab svg polygon {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 header .headerBG .barThin {
@@ -741,9 +793,9 @@ header .headerBG .barThin {
 
 @media screen and (max-width: 780px) {
   header .headerBG .tab {
-    -webkit-transform: scale(1.5, 2.2);
-        -ms-transform: scale(1.5, 2.2);
-            transform: scale(1.5, 2.2);
+    -webkit-transform: scale(2.5, 2.2);
+        -ms-transform: scale(2.5, 2.2);
+            transform: scale(2.5, 2.2);
   }
   header .headerBG .barThin {
     height: 175px;
@@ -752,9 +804,9 @@ header .headerBG .barThin {
 
 @media screen and (max-width: 625px) {
   header .headerBG .tab {
-    -webkit-transform: scale(5, 2);
-        -ms-transform: scale(5, 2);
-            transform: scale(5, 2);
+    -webkit-transform: scale(7, 2);
+        -ms-transform: scale(7, 2);
+            transform: scale(7, 2);
   }
 }
 
@@ -785,9 +837,10 @@ header .headerBG .barThin {
 }
 
 .compact .headerBG .container .tab {
-  -webkit-transform: scale(1, 1.33);
-      -ms-transform: scale(1, 1.33);
-          transform: scale(1, 1.33);
+  left: -1px;
+  -webkit-transform: scale(1.02, 1);
+      -ms-transform: scale(1.02, 1);
+          transform: scale(1.02, 1);
   -webkit-flex-basis: 185px;
       -ms-flex-preferred-size: 185px;
           flex-basis: 185px;
@@ -817,6 +870,30 @@ header .headerBG .barThin {
 
 .resume-brk {
   background-image: url(../img/break03-2000.jpg);
+}
+
+@media screen and (min-width: 2000px) {
+  .about-brk {
+    background-image: url(../img/break01-3000.jpg);
+  }
+  .portfolio-brk {
+    background-image: url(../img/break02-3000.jpg);
+  }
+  .resume-brk {
+    background-image: url(../img/break03-3000.jpg);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about-brk {
+    background-image: url(../img/break01-0900.jpg);
+  }
+  .portfolio-brk {
+    background-image: url(../img/break02-0900.jpg);
+  }
+  .resume-brk {
+    background-image: url(../img/break03-0900.jpg);
+  }
 }
 
 footer {
@@ -880,6 +957,18 @@ footer p {
   }
 }
 
+@media screen and (min-width: 2000px) {
+  footer {
+    background-image: url(../img/break04-3000.jpg);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  footer {
+    background-image: url(../img/break04-0900.jpg);
+  }
+}
+
 .landing {
   position: relative;
   top: 0;
@@ -890,6 +979,18 @@ footer p {
   background-attachment: fixed;
   height: 100vh;
   width: 100%;
+}
+
+@media screen and (min-width: 2000px) {
+  .landing {
+    background-image: url(../img/landing-3000.jpg);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .landing {
+    background-image: url(../img/landing-0900.jpg);
+  }
 }
 
 .landingNav {
@@ -1007,7 +1108,31 @@ footer p {
 .myself .words {
   background-color: #fff;
   padding: 20px 5% 70px;
-  margin-bottom: 20px;
+}
+
+.myself .words .findme {
+  width: 100%;
+  margin: 10px 0 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.myself .words .findme a {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: #e5e3e3;
+}
+
+.myself .words .findme a:hover {
+  color: #272727;
 }
 
 .myself .avatar {
@@ -1081,12 +1206,12 @@ footer p {
 .portfolio h3:after {
   content: '';
   display: none;
-  width: 120%;
+  width: 110%;
   height: 2px;
   background: #272727;
   position: absolute;
   bottom: -3px;
-  left: -10%;
+  left: 0%;
 }
 
 .portfolio h3:hover:after {
@@ -1099,14 +1224,31 @@ footer p {
   top: 4px;
 }
 
-.portfolio .carousel, .portfolio .piece {
+.portfolio .thumbnails, .portfolio .piece {
   width: 50%;
   overflow: hidden;
 }
 
-.portfolio .carousel {
+.portfolio .thumbnails {
   position: relative;
   float: left;
+  text-align: center;
+}
+
+.portfolio .thumbnails .button {
+  margin: 30px auto 0;
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .portfolio .thumbnails {
+    padding: 0 30px;
+  }
+}
+
+.portfolio .thumbnail-grid {
+  position: relative;
+  margin: 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1114,63 +1256,36 @@ footer p {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 10px;
-}
-
-.portfolio .carousel .button {
-  margin: 30px auto 0;
-}
-
-@media screen and (max-width: 900px) {
-  .portfolio .carousel {
-    padding: 0 30px;
-  }
-}
-
-.portfolio .carouselInner {
-  position: relative;
-  width: 765px;
-  overflow: hidden;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-bottom: 10px;
 }
 
-.portfolio .carouselInner ul {
-  position: relative;
-  width: 99999px;
-  left: -255px;
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
-}
-
-.portfolio .carouselInner ul li {
+.portfolio .thumbnail-grid .thumb {
   position: relative;
   float: left;
-  width: 245px;
-  margin: 0 5px;
-  height: 375px;
+  margin: 5px;
+  overflow: hidden;
+  width: 30%;
   cursor: pointer;
+  background-color: #461f59;
   background-size: cover;
   background-position: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.portfolio .carouselInner ul li h4 {
+.portfolio .thumbnail-grid .thumb h4 {
   opacity: 0;
   position: absolute;
-  top: -20px;
+  top: -1em;
   right: 0;
   bottom: 0;
   left: 0;
   margin: auto;
-  padding: 50px 0.2em 0;
-  background-color: rgba(70, 31, 89, 0.9);
+  padding: 1.3em 0.2em 0;
+  background-color: rgba(39, 39, 39, 0.9);
   font-family: "museo",serif;
   font-weight: 300;
   font-size: 3.5rem;
@@ -1181,38 +1296,54 @@ footer p {
           transition: all 0.3s;
 }
 
-.portfolio .carouselInner ul li:hover h4 {
+.portfolio .thumbnail-grid .thumb:hover h4 {
   opacity: 1;
   top: 0;
 }
 
-@media screen and (max-width: 900px) {
-  .portfolio .carouselInner {
-    width: 510px;
-  }
+.portfolio .thumbnail-grid .thumb:after {
+  content: '';
+  display: block;
+  padding-top: 120%;
 }
 
 @media screen and (max-width: 700px) {
-  .portfolio .carouselInner {
-    width: 255px;
+  .portfolio .thumbnail-grid .thumb {
+    width: 45%;
+  }
+  .portfolio .thumbnail-grid .thumb h4 {
+    padding: 1em 0.2em 1em;
   }
 }
 
-.portfolio .scrollL, .portfolio .scrollR {
-  color: #461f59;
-  font-size: 125px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s;
-          transition: all 0.3s;
+@media screen and (max-width: 550px) {
+  .portfolio .thumbnail-grid .thumb h4 {
+    opacity: 1;
+    top: 40%;
+    bottom: 0;
+    font-size: 2.5rem;
+  }
 }
 
-.portfolio .scrollL:hover, .portfolio .scrollR:hover {
-  color: rgba(70, 31, 89, 0.85);
+@media screen and (max-width: 500px) {
+  .portfolio .thumbnail-grid .thumb h4 {
+    padding: 0.5em 0.2em 0.5em;
+    font-size: 2rem;
+  }
 }
 
-.portfolio .carouselLink {
-  width: 100%;
-  text-align: center;
+@media screen and (max-width: 400px) {
+  .portfolio .thumbnail-grid .thumb {
+    width: 100%;
+  }
+  .portfolio .thumbnail-grid .thumb h4 {
+    padding-bottom: 1em;
+    font-size: 3rem;
+    bottom: 0;
+  }
+  .portfolio .thumbnail-grid .thumb:after {
+    padding-top: 100%;
+  }
 }
 
 .portfolio .piece {
@@ -1303,8 +1434,10 @@ footer p {
 }
 
 .work-content .img-beam {
+  -webkit-align-self: stretch;
+      -ms-flex-item-align: stretch;
+          align-self: stretch;
   width: 100%;
-  height: auto;
 }
 
 .work-content .col-1-3, .work-content .col-2-3, .work-content .col-1-2, .work-content .col-full {
@@ -1368,6 +1501,13 @@ footer p {
   with: 100%;
 }
 
+@media screen and (max-width: 700px) {
+  .work-content .col-1-2s, .work-content .col-1-2s {
+    width: -webkit-calc(50% - 20px);
+    width: calc(50% - 20px);
+  }
+}
+
 @media screen and (max-width: 600px) {
   .work-content {
     display: block;
@@ -1424,6 +1564,7 @@ footer p {
 .work03 .logo-box .logo {
   display: inline-block;
   width: 25%;
+  padding: 1.5%;
   max-width: 120px;
   background-size: 90%;
   background-repeat: no-repeat;
@@ -1432,18 +1573,12 @@ footer p {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.work03 .logo-box .logo:after {
-  content: '';
-  display: block;
-  padding-top: 100%;
+.work03 .logo-box .logo.purp path {
+  fill: #461f59;
 }
 
-.work03 .logo-box .logo.purp {
-  background-image: url("../img/bhLogo_AlphaPurple.png");
-}
-
-.work03 .logo-box .logo.whiteP, .work03 .logo-box .logo.whiteG {
-  background-image: url("../img/bhLogo_AlphaWhite.png");
+.work03 .logo-box .logo.whiteP path, .work03 .logo-box .logo.whiteG path {
+  fill: #fff;
 }
 
 .work03 .logo-box .logo.whiteP {
@@ -1454,8 +1589,8 @@ footer p {
   background-color: #272727;
 }
 
-.work03 .logo-box .logo.black {
-  background-image: url("../img/bhLogo_AlphaBlack.png");
+.work03 .logo-box .logo.black path {
+  fill: #272727;
 }
 
 .work03 .pre-logo {
@@ -1563,6 +1698,12 @@ footer p {
   background-image: url(../img/tab.svg);
   background-repeat: no-repeat;
   background-position: top right;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .resume h2 {
+    background-image: url(../img/tab.png);
+  }
 }
 
 .resume h2:before {
@@ -1713,6 +1854,21 @@ footer p {
           transition: all 0.3s;
 }
 
+.socialBlock p .accent {
+  position: relative;
+}
+
+.socialBlock p .accent:before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: .15em;
+  top: .5em;
+  background: #272727;
+  height: 1px;
+  width: .28em;
+}
+
 .socialBlock:hover .bubble {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
@@ -1836,6 +1992,12 @@ footer p {
   background-position: top right;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .email a {
+    background-image: url(../img/tab.png);
+  }
+}
+
 .email a:before {
   position: absolute;
   top: 0;
@@ -1851,6 +2013,12 @@ footer p {
   text-align: left;
   background-image: url(../img/tabPhone.svg);
   background-position: top left;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .phone a {
+    background-image: url(../img/tabPhone.png);
+  }
 }
 
 .phone a:after {

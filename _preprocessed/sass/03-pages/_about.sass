@@ -49,7 +49,19 @@
     .words
         background-color: $white
         padding: 20px 5% 70px
-        margin-bottom: 20px
+        .findme
+            width: 100%
+            margin: 10px 0 50px
+            display: flex
+            justify-content: space-around
+            a
+                display: inline-block
+                +size(3rem)
+                font-size: 3.5rem
+                line-height: 1
+                color: $ltGrey
+                &:hover
+                    color: $dkGrey
     .avatar
         position: absolute
         right: 0px

@@ -16,16 +16,14 @@ $(function() {
     var aboutT = $('.about-brk').offset().top;
     var portT = $('.portfolio-brk').offset().top;
     var resT = $('.resume-brk').offset().top;
-    var wWidth = $(window).width()
+    var wWidth = $(window).width();
     console.log('Page is Loaded');
     console.log('Top of Window: ' +wScrollT);
-    console.log('Width of Window: ' +wWidth);
     
     //Loading Functions
     smoothScroll(1000);
     mobileNav();
     aboutSwitch();
-    portCarousel();
     portSwitch();
     pieceLoad();
 })
@@ -39,6 +37,7 @@ $(window).scroll(function(){
     aboutT = $('.about-brk').offset().top;
     portT = $('.portfolio-brk').offset().top;
     resT = $('.resume-brk').offset().top;
+    wWidth = $(window).width();
     //console.log('Top of Window: ' +wScrollT);
     
     //Controlling Header's morph from full to compact and back
@@ -49,14 +48,21 @@ $(window).scroll(function(){
     }
     
     //Contorlling parallax effects of break images
-    if(wScrollB > (aboutT-10)){
-        $('.about-brk').css({'background-position':'center ' + -(((wScrollT - aboutT)/8)+($(window).width()/17)) + 'px'})
-    }
-    if(wScrollB > (portT-10)){
-        $('.portfolio-brk').css({'background-position':'center ' + -(((wScrollT - portT)/8)+($(window).width()/17)) + 'px'})
-    }
-    if(wScrollB > (resT-10)){
-        $('.resume-brk').css({'background-position':'center ' + -(((wScrollT - resT)/8)+($(window).width()/17)) + 'px'})
+    console.log('Width of Window: ' + wWidth);
+    if(wWidth > 700){
+        if(wScrollB > (aboutT-10)){
+            $('.about-brk').css({'background-position':'center ' + -(((wScrollT - aboutT)/5)) + 'px'})
+        }
+        if(wScrollB > (portT-10)){
+            $('.portfolio-brk').css({'background-position':'center ' + -(((wScrollT - portT)/8)) + 'px'})
+        }
+        if(wScrollB > (resT-10)){
+            $('.resume-brk').css({'background-position':'center ' + -(((wScrollT - resT)/8)) + 'px'})
+        };
+    }else{
+        $('.about-brk').css({'background-position':'center 0px','background-attachment':'fixed'});
+        $('.portfolio-brk').css({'background-position':'center 0px','background-attachment':'fixed'});
+        $('.resume-brk').css({'background-position':'center 0px','background-attachment':'fixed'});
     }
 })
 
@@ -110,34 +116,7 @@ function aboutSwitch() {
 }
 
 
-//Portfolio Carousel
-function portCarousel() {
-    $('.carouselInner ul li:first').before($('.carouselInner ul li:last'));
-    var thumbWidth = $('.carouselInner ul li').outerWidth(true);
-    var direction
-    
-    $('.scrollR').click(function(){
-        direction = 'right';
-        $('.carouselInner ul').css('left', -(thumbWidth *2) + 'px');
-        setTimeout(leftReset,310);
-    });
-    $('.scrollL').click(function(){
-        direction = 'left';
-        $('.carouselInner ul').css('left', '0px');
-        setTimeout(leftReset,310);
-    });
-    
-    function leftReset(){
-        $('.carouselInner ul').css('transition', 'none');
-        if (direction === 'right'){
-            $('.carouselInner ul li:last').after($('.carouselInner ul li:first'));
-        }else{
-            $('.carouselInner ul li:first').before($('.carouselInner ul li:last'));
-        }
-        $('.carouselInner ul').css('left', '-' + thumbWidth + 'px');
-        setTimeout(function(){$('.carouselInner ul').css('transition', 'all .5s');},100);
-    }
-}
+
 
 //Controlling the styles and content of the Portfolio section
 function portSwitch() {
@@ -159,7 +138,7 @@ function pieceLoad(){
     $('.thumb').click(function(){
         var $this = $(this),
             newPiece = $this.data('piece'),
-            spinner = '<div class="loader">Loading...</div>',
+            spinner = '<div class="loader"></div>',
             newHTML = newPiece + '.html';
         $('.pieceLoad').html(spinner).load(newHTML);
         console.log('Viewing: '+newHTML);
